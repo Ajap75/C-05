@@ -6,11 +6,11 @@
 #    By: antoinejourdan-astruc <antoinejourdan-a    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/07 12:53:29 by anastruc          #+#    #+#              #
-#    Updated: 2024/12/19 12:44:31 by antoinejour      ###   ########.fr        #
+#    Updated: 2024/12/19 12:56:15 by antoinejour      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = AForm
+NAME = Intern
 COMPIL = c++
 FLAGS =  -Wall -Werror -Wextra -std=c++98 -g3 -fPIC
 
@@ -64,11 +64,11 @@ $(NAME) : $(OBJS)
 
 clean :
 	@rm -rf objs
-	@echo  "$(BLUE)\n  AForm CLEANED \n$(NC)"
+	@echo  "$(BLUE)\n  Intern CLEANED \n$(NC)"
 
 fclean : clean
 	@rm -rf $(NAME)
-	@echo  "$(BLUE)\n  AForm FULLY CLEANED \n$(NC)"
+	@echo  "$(BLUE)\n  Intern FULLY CLEANED \n$(NC)"
 
 leak :
 	@valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --track-fds=yes ./$(NAME)
