@@ -6,7 +6,7 @@
 #    By: antoinejourdan-astruc <antoinejourdan-a    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/07 12:53:29 by anastruc          #+#    #+#              #
-#    Updated: 2024/12/18 18:53:43 by antoinejour      ###   ########.fr        #
+#    Updated: 2024/12/19 09:47:40 by antoinejour      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ NC = \033[0m
 
 HEADER = Bureaucrat.hpp \
  AForm.hpp \
- Colors.hpp \
+ OutputFormat.hpp \
  ShrubberryCreationForm.hpp \
  RobotomyRequestForm.hpp \
  PresidentialPardonForm.hpp \

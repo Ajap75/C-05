@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "../headers/ShrubberryCreationForm.hpp"
-#include "../headers/Colors.hpp"
+#include "../headers/OutputFormat.hpp"
 #include "../headers/Bureaucrat.hpp"
 #include "fstream"
 
@@ -64,6 +64,7 @@ std::string ShrubberyCreationForm::getTarget() const
 void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
     this->beExecuted(executor);
+    std::cout << GREEN << "A file named : " << this->getTarget() << "_shrubberry has been created in the currebnt directory with a ASCCI TREE in it" << RESET << std::endl;
     int i;
     int j;
     int k;

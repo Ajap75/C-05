@@ -6,12 +6,12 @@
 /*   By: antoinejourdan-astruc <antoinejourdan-a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 14:30:56 by antoinejour       #+#    #+#             */
-/*   Updated: 2024/12/18 17:51:59 by antoinejour      ###   ########.fr       */
+/*   Updated: 2024/12/19 10:19:00 by antoinejour      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/Bureaucrat.hpp"
-#include "../headers/Colors.hpp"
+#include "../headers/OutputFormat.hpp"
 #include "../headers/AForm.hpp"
 
 Bureaucrat::Bureaucrat() : _name("undefined"), _grade(1) 
@@ -82,14 +82,9 @@ void Bureaucrat::decrement()
     std::cout << "New situation of the Bureaucrat : " << std::endl << *this << std::endl;
 }
 
-void Bureaucrat::signAForm(AForm& form, bool action) const
+void Bureaucrat::signAForm(AForm& form) const
 {
-    if (form.getStatus() == true && action == true)
-        std::cout << this->getName() << GREEN << " signed " << RESET << form.getName() << std::endl;
-    else if (form.getStatus() == true && action == false)
-        std::cout << this->getName() << RED << " couldn't signed " << form.getName() << "because the form was ALREADY SIGNEDS" << RESET << std::endl;
-    else if (form.getStatus() == false && action == false)
-        std::cout << this->getName() << RED << " couldn't signed " << form.getName() << "because his grade of " << this->getGrade() << RESET << "is below the required accreditation grade of " << form.getAccreditation_to_sign() <<  "to sign the form "  << std::endl;
+    form.beSigned(*this);
 }
 
 void Bureaucrat::executeForm(AForm const & form)

@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "../headers/AForm.hpp"
-#include "../headers/Colors.hpp"
+#include "../headers/OutputFormat.hpp"
 #include "../headers/Bureaucrat.hpp"
 
 
@@ -28,7 +28,7 @@ AForm::AForm() :
 AForm::AForm(const std::string name, const int accreditation_to_sign, const int accreditation_to_execute, bool status) :
     _name(name), _status(status), _accreditation_to_sign(accreditation_to_sign), _accreditation_to_execute(accreditation_to_execute) 
 {
-    std::cout << GREEN << "AForm named : " << this->getName() << " constructor called" << RESET << std::endl;
+    std::cout << GREEN << "AForm constructor called" << RESET << std::endl;
     if (accreditation_to_execute < 1 || accreditation_to_sign < 1)
     {
         throw(AForm::GradeTooHighException());
@@ -41,7 +41,7 @@ AForm::AForm(const std::string name, const int accreditation_to_sign, const int 
 
 AForm::~AForm()
 {
-    std::cout << RED << "AForm named : " << this->getName() << " Destructor called" << RESET << std::endl;
+    std::cout << RED << "AForm Destructor called" << RESET << std::endl;
 }
 
 AForm::AForm(const AForm& other) : 
@@ -88,19 +88,21 @@ void AForm::setStatus()
     return ;
 }
 
+        
 void AForm::beSigned(const Bureaucrat& b) 
 {
     if (b.getGrade() <= this->getAccreditation_to_sign() && this->getStatus() == false)
     {
         this->setStatus();
-        b.signAForm(*this, true);
+        std::cout << b.getName() << GREEN << " signed " << RESET << this->getName() << std::endl;
     }
     else if (b.getGrade() <= this->getAccreditation_to_sign() && this->getStatus() == true)
     {
-        b.signAForm(*this, false);
+        std::cout << b.getName() << RED << " couldn't signed " << this->getName() << " because the form was ALREADY SIGNED -> Form Status = " << this->getStatus() << RESET << std::endl;
     }
     else
     {
+        std::cout << b.getName() << RED << " couldn't signed " << this->getName() << " because his grade of " << b.getGrade() << RESET << " is below the required accreditation grade of " << this->getAccreditation_to_sign() <<  " to sign the form "  << std::endl << std::endl;
         throw(AForm::GradeTooLowException());
     }
 }
@@ -110,10 +112,13 @@ void AForm::beSigned(const Bureaucrat& b)
     if (this->getStatus() == false)
         throw(AForm::NotSignedException());
     else if (b.getGrade() >= this->getAccreditation_to_execute())
-        throw(AForm::GradeTooHighException());
+    {
+        std::cout << b.getName() << RED << " couldn't signed " << this->getName() << " because is grade is too Low, sorry mamen" << RESET << std::endl;
+        throw(AForm::GradeTooLowException());
+    }
     else if (b.getGrade() <= this->getAccreditation_to_execute() && this->getStatus() == true)
     {
-        std::cout << "The Form type" << this->getName() << GREEN << " is signed and the parmission is granted to " << b.getName() << " to execute the Form" << RESET << std::endl;
+        std::cout << "The Form type " << this->getName() << GREEN << " is signed and the parmission is granted to " << b.getName() << " to execute the Form" << RESET << std::endl;
     }
  }
 

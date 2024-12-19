@@ -6,7 +6,7 @@
 /*   By: antoinejourdan-astruc <antoinejourdan-a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 17:01:17 by antoinejour       #+#    #+#             */
-/*   Updated: 2024/12/18 13:05:05 by antoinejour      ###   ########.fr       */
+/*   Updated: 2024/12/19 10:13:12 by antoinejour      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 const char* AForm::GradeTooHighException::what() const throw()
 {
-    return ("FORM Grade is too hign");
+    return ("EXCEPTION THROW : FORM Grade is too hign");
 }

@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "../headers/RobotomyRequestForm.hpp"
-#include "../headers/Colors.hpp"
+#include "../headers/OutputFormat.hpp"
 #include "../headers/Bureaucrat.hpp"
 #include "fstream"
 
@@ -66,15 +66,20 @@ void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
     this->beExecuted(executor);
     std::cout << RED << "DRRRRRIIIIIIIIIIIzzz bssss ccrrak" << RESET << std::endl;
-    if (std::rand() % 2 == 0) // 50% chance
+    std::srand(std::time(nullptr)); // seed for the generator based on current time.
+    if (std::rand() % 2 == 0) // 50% chance : take a random number,  
     {
-        std::cout << GREEN << this->getTarget() << "has been robotomized successfully " << RESET << std::endl;
+        std::cout << GREEN << this->getTarget() << " has been robotomized successfully " << RESET << std::endl;
     }
     else
     {
         std::cout << RED << this->getTarget() << " failed to be robotomized" << RESET << std::endl;
     }
 }
+
+/* Seed and Determinism:
+If you do not seed the random number generator (using std::srand()), the pseudo-random sequence will start from the same initial value every time the program runs. This makes it deterministic (the same sequence will repeat each time you run the program).
+If you use std::srand(std::time(nullptr)), it seeds the generator with the current time, providing a different starting point for the random number sequence for each execution of the program */
 
 
 

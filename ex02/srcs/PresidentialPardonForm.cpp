@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "../headers/PresidentialPardonForm.hpp"
-#include "../headers/Colors.hpp"
+#include "../headers/OutputFormat.hpp"
 #include "../headers/Bureaucrat.hpp"
 #include "fstream"
 
@@ -65,7 +65,7 @@ std::string PresidentialPardonForm::getTarget() const
 void PresidentialPardonForm::execute(Bureaucrat const & executor) const
 {
     this->beExecuted(executor);
-    std::cout << this->getTarget() << GREEN << this->getTarget() << " has been pardoned by Zaphod Beeblebrox." << RESET << std::endl;
+    std::cout << this->getTarget() << GREEN << " has been pardoned by Zaphod Beeblebrox." << RESET << std::endl;
 }
 
 

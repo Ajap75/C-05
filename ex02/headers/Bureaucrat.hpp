@@ -6,7 +6,7 @@
 /*   By: antoinejourdan-astruc <antoinejourdan-a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 14:30:58 by antoinejour       #+#    #+#             */
-/*   Updated: 2024/12/18 17:39:56 by antoinejour      ###   ########.fr       */
+/*   Updated: 2024/12/19 09:16:45 by antoinejour      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ class Bureaucrat
     int getGrade() const;
     void increment();
     void decrement();
-    void signAForm(AForm& form,  bool action) const;
+    void signAForm(AForm& form) const;
     void executeForm(AForm const & form);
 };
 

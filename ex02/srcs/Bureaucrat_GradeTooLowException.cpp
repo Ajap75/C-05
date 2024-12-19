@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   GradeTooLowException.cpp                           :+:      :+:    :+:   */
+/*   Bureaucrat_GradeTooLowException.cpp                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antoinejourdan-astruc <antoinejourdan-a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 17:01:17 by antoinejour       #+#    #+#             */
-/*   Updated: 2024/12/17 15:33:44 by antoinejour      ###   ########.fr       */
+/*   Updated: 2024/12/19 10:13:08 by antoinejour      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 const char* Bureaucrat::GradeTooLowException::what() const throw()
 {
-    return ("BUREAUCRAT Grade is too low");
+    return ("EXCEPTION THROW : BUREAUCRAT Grade is too low");
 }

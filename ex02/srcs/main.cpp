@@ -6,7 +6,7 @@
 /*   By: antoinejourdan-astruc <antoinejourdan-a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 18:01:18 by antoinejour       #+#    #+#             */
-/*   Updated: 2024/12/18 19:11:34 by antoinejour      ###   ########.fr       */
+/*   Updated: 2024/12/19 10:46:48 by antoinejour      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,18 @@
 #include "../headers/ShrubberryCreationForm.hpp"
 #include "../headers/RobotomyRequestForm.hpp"
 #include "../headers/PresidentialPardonForm.hpp"
-
-
 #include "../headers/AForm.hpp"
-#include "../headers/Colors.hpp"
+#include "../headers/OutputFormat.hpp"
 
 int main ()
 {
-            // BUREAUCRATE TEST //
+           
     try 
-    {
+    { 
+        //------------------- BUREAUCRATE TEST ----------------------//
+        
+        std::cout << std::endl << UNDERLINE_YELLOW << YELLOW << "TEST 1 : BUREAUCRATES HAVE A GRADE THAT FITS IN BOUND" << RESET << std::endl << std::endl;
+
         Bureaucrat Bureaucrat1("John", 1);
         // Bureaucrat Bureaucrat1("John", 0);
 
@@ -33,7 +35,11 @@ int main ()
         Bureaucrat Bureaucrat3("Karim", 2);
         // Bureaucrat Bureaucrat3("Karim", 1);
 
+        std::cout << std::endl << UNDERLINE_GREEN << GREEN << "TEST 1 : OK" << RESET << std::endl;
 
+        //------------------ INCREMENT DECREMENT FUNCTION TESTS ----------------- // 
+        
+        std::cout << std::endl << UNDERLINE_YELLOW << YELLOW << "TEST 2 : THE DECREMENT AND INCREMENT FUNCTION" << RESET << std::endl << std::endl;
     
         Bureaucrat1.decrement();
         std::cout << "__________" << std::endl;
@@ -41,33 +47,50 @@ int main ()
         std::cout << "__________" << std::endl;
         Bureaucrat3.increment();
 
+        std::cout << std::endl << UNDERLINE_GREEN << GREEN << "TEST 2 OK : THE DECREMENT AND INCREMENT FUNCTION DO THE JOB PROPERLY" << RESET << std::endl;
+
         //------------------ FORM TEST----------------- // 
         
+        std::cout << std::endl << UNDERLINE_YELLOW << YELLOW << "TEST 3 : FORM CREATION" << RESET << std::endl << std::endl;
+        
+        ShrubberyCreationForm home("home");
+        RobotomyRequestForm car("car");
+        PresidentialPardonForm Tony("Tony");
+        PresidentialPardonForm notsigned("B21");
 
-        ShrubberyCreationForm Form1("ShrubberryCreationForm");
-        RobotomyRequestForm Form2("car");
-        PresidentialPardonForm Form3("car");
+        std::cout << std::endl << UNDERLINE_GREEN << GREEN << "TEST 3 OK : THE FORM HAVE BEEN PROPERLY CREATED" << RESET << std::endl;
+        
+        
+        //---------------- SIGNING FORM TEST ------------//
+        
+        std::cout << std::endl << UNDERLINE_YELLOW << YELLOW << "TEST 4 : SIGNING FORM" << RESET << std::endl << std::endl;
+        
+        
+        Bureaucrat1.signAForm(home); 
+        Bureaucrat1.signAForm(home); // Re-sign form test
+        // Bureaucrat2.signAForm(car); // Low Accreditation Test
+        // Bureaucrat2.signAForm(Tony); // Low Accreditation Test
+        Bureaucrat1.signAForm(car); 
+        Bureaucrat1.signAForm(Tony); 
+        
 
-        // Form Form2 ("Get Married", 150, 10);
+        std::cout << std::endl << UNDERLINE_GREEN << GREEN << "TEST 4 OK :THE FORM HAVE BEEN PROPERLY SIGNED" << RESET << std::endl;
 
-        // Form Form3 ("Get divorced", 25, 10);
-        // int i = 0;
-        Form1.beSigned(Bureaucrat1); // Form signed normally 
-        Bureaucrat1.executeForm(Form1); // Form signed normally 
-        Form2.beSigned(Bureaucrat1);
-        Form3.beSigned(Bureaucrat1);
-        Bureaucrat1.executeForm(Form3);
-        // while(i <= 100)
-        // {
-        //     Bureaucrat1.executeForm(Form2); // Form signed normally 
-        //     i++;
-        // }
+        
+        //--------------EXECUTE FORM TEST ------------------//
 
-        // Form1.beSigned(Bureaucrat1); // Form cannot be signed because has already been signed
+        std::cout << std::endl << UNDERLINE_YELLOW << YELLOW << "TEST 5 : EXECUTING FORM" << RESET << std::endl << std::endl;
 
-        // Form2.beSigned(Bureaucrat2); // Should throw an Exception, too low level 
+            Bureaucrat1.executeForm(Tony);
+            Bureaucrat1.executeForm(home); // Form signed normally 
+            Bureaucrat1.executeForm(car);
+            // Bureaucrat1.executeForm(notsigned); // Try to execute an unsigned form. 
+            Bureaucrat2.executeForm(Tony);
+            
 
-        // Form3.beSigned(Bureaucrat3); // 
+        std::cout << std::endl << UNDERLINE_GREEN << GREEN << "TEST 5 OK : FORMS HAVE BEEN SUCCESSFULLY EXECUTED" << RESET << std::endl << std::endl;
+        std::cout << std::endl << GREEN << "ALL TEST PASSED" << RESET << std::endl;
+ 
     }
     catch(const std::exception& e)
     {
