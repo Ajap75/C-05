@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antoinejourdan-astruc <antoinejourdan-a    +#+  +:+       +#+        */
+/*   By: anastruc <anastruc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 14:30:56 by antoinejour       #+#    #+#             */
-/*   Updated: 2024/12/17 17:12:23 by antoinejour      ###   ########.fr       */
+/*   Updated: 2025/03/19 12:27:38 by anastruc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,9 +87,9 @@ void Bureaucrat::signForm(Form& form, bool action) const
     if (form.getStatus() == true && action == true)
         std::cout << this->getName() << GREEN << " signed " << RESET << form.getName() << std::endl;
     else if (form.getStatus() == true && action == false)
-        std::cout << this->getName() << RED << " couldn't signed " << form.getName() << "because the form was ALREADY SIGNEDS" << RESET << std::endl;
+        std::cout << this->getName() << RED << " couldn't signed " << form.getName() << " because the form was ALREADY SIGNEDS" << RESET << std::endl;
     else if (form.getStatus() == false && action == false)
-        std::cout << this->getName() << RED << " couldn't signed " << form.getName() << "because his grade of " << this->getGrade() << RESET << "is below the required accreditation grade of " << form.getAccreditation_to_sign() <<  "to sign the form "  << std::endl;
+        std::cout << this->getName() << RED << " couldn't signed " << form.getName() << " because his grade of " << this->getGrade() << RESET << "is below the required accreditation grade of " << form.getAccreditation_to_sign() <<  "to sign the form "  << std::endl;
 }
 
 

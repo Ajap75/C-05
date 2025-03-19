@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antoinejourdan-astruc <antoinejourdan-a    +#+  +:+       +#+        */
+/*   By: anastruc <anastruc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 14:30:56 by antoinejour       #+#    #+#             */
-/*   Updated: 2024/12/17 14:56:54 by antoinejour      ###   ########.fr       */
+/*   Updated: 2025/03/19 15:40:19 by anastruc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,9 +88,9 @@ void Bureaucrat::decrement()
 
 std::ostream& operator <<(std::ostream& out, const Bureaucrat& other)
 {
-    std::cout << BLUE << "OVERLOADED <<  OPERATOR CALLED" << RESET << std::endl;
-    out <<  "Bureaucrate Name = " <<MAGENTA << other.getName() << RESET << std::endl;
-    out  << "Bureaucrate Grade = "  << MAGENTA<< other.getGrade() << RESET << std::endl;
+    // std::cout << BLUE << "OVERLOADED <<  OPERATOR CALLED" << RESET << std::endl;
+    out << MAGENTA << other.getName() << RESET << ", ";
+    out  << "bureaucrat grade "  << MAGENTA<< other.getGrade() << RESET << std::endl;
     return (out);  
 };
 

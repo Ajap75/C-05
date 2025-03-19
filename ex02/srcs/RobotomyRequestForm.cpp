@@ -14,6 +14,8 @@
 #include "../headers/OutputFormat.hpp"
 #include "../headers/Bureaucrat.hpp"
 #include "fstream"
+#include <stdlib.h>
+
 
 
 
@@ -66,8 +68,8 @@ void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
     this->beExecuted(executor);
     std::cout << RED << "DRRRRRIIIIIIIIIIIzzz bssss ccrrak" << RESET << std::endl;
-    std::srand(std::time(nullptr)); // seed for the generator based on current time.
-    if (std::rand() % 2 == 0) // 50% chance : take a random number,  
+    srand(time(NULL)); // seed for the generator based on current time.
+    if (rand() % 2 == 0) // 50% chance : take a random number,  
     {
         std::cout << GREEN << this->getTarget() << " has been robotomized successfully " << RESET << std::endl;
     }

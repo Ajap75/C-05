@@ -73,12 +73,15 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
     int trunkHeight = height / 3;
     int t = 0;
 
-    std::ofstream file(this->getTarget() + "_shruberry");
+    std::string filename = this->getTarget() + "_shruberry";
+
+    std::ofstream file(filename.c_str());
     if (!file)
     {
         std::cerr << "Error opening file : " << this->getTarget() << std::endl;
         return;
     }
+
 
     i = 0;
     while (i <= height)
