@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antoinejourdan-astruc <antoinejourdan-a    +#+  +:+       +#+        */
+/*   By: anastruc <anastruc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 13:22:12 by antoinejour       #+#    #+#             */
-/*   Updated: 2024/12/17 16:50:00 by antoinejour      ###   ########.fr       */
+/*   Updated: 2025/03/21 10:56:53 by anastruc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ class Form
     //---------MEMBERS FUNCTIONS---------------//
     
     std::string getName() const;
-    bool getStatus();
+    bool getStatus() const;
     void setStatus();
     int getAccreditation_to_sign() const;
     int getAccreditation_to_execute() const;

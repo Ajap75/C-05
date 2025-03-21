@@ -6,7 +6,7 @@
 #    By: anastruc <anastruc@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/07 12:53:29 by anastruc          #+#    #+#              #
-#    Updated: 2025/03/19 15:04:10 by anastruc         ###   ########.fr        #
+#    Updated: 2025/03/21 11:05:17 by anastruc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,7 +54,7 @@ objs/%.o: srcs/%.cpp $(PHEADERS)
 
 $(NAME) : $(OBJS)
 		@$(COMPIL) $(FLAGS) -o $@ $(OBJS)
-		@echo "$(BLUE)\n  Exception COMPILED \n$(NC) "
+		@echo "$(BLUE)\n  AForm COMPILED \n$(NC) "
 
 
 clean :

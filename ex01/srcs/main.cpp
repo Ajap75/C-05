@@ -6,7 +6,7 @@
 /*   By: anastruc <anastruc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 18:01:18 by antoinejour       #+#    #+#             */
-/*   Updated: 2025/03/19 12:30:47 by anastruc         ###   ########.fr       */
+/*   Updated: 2025/03/21 10:58:19 by anastruc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,17 +40,24 @@ int main ()
         
 
         Form Form1 ("Kill a man", 2, 1);
+        std::cout << Form1 << std::endl;
 
         Form Form2 ("Get Married", 148, 10);
+        std::cout << Form2 << std::endl;
 
         Form Form3 ("Get divorced", 25, 10);
+        std::cout << Form3 << std::endl;
 
-        Form1.beSigned(Bureaucrat1); // Form signed normally 
+
+        Form1.beSigned(Bureaucrat1); // Form signed normally
+        std::cout << Form1 << std::endl;
         Form1.beSigned(Bureaucrat1); // Form cannot be signed because has already been signed
-
+        std::cout << Form1 << std::endl;
         Form2.beSigned(Bureaucrat2); // Should throw an Exception, too low level 
-
-        Form3.beSigned(Bureaucrat3); // 
+        std::cout << Form2 << std::endl;
+        Form3.beSigned(Bureaucrat3); //
+        std::cout << Form3 << std::endl;
+ 
     }
     catch(const std::exception& e)
     {

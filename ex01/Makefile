@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: antoinejourdan-astruc <antoinejourdan-a    +#+  +:+       +#+         #
+#    By: anastruc <anastruc@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/07 12:53:29 by anastruc          #+#    #+#              #
-#    Updated: 2024/12/17 16:48:39 by antoinejour      ###   ########.fr        #
+#    Updated: 2025/03/21 10:54:20 by anastruc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,7 @@ objs/%.o: srcs/%.cpp $(PHEADERS)
 
 $(NAME) : $(OBJS)
 		@$(COMPIL) $(FLAGS) -o $@ $(OBJS)
-		@echo "$(BLUE)\n  Exception COMPILED \n$(NC) "
+		@echo "$(BLUE)\n  Form up, maggots! COMPILED \n$(NC) "
 
 
 clean :

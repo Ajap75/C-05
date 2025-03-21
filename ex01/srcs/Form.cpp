@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antoinejourdan-astruc <antoinejourdan-a    +#+  +:+       +#+        */
+/*   By: anastruc <anastruc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 13:37:20 by antoinejour       #+#    #+#             */
-/*   Updated: 2024/12/17 17:18:22 by antoinejour      ###   ########.fr       */
+/*   Updated: 2025/03/21 11:02:07 by anastruc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ std::string Form::getName() const
 {
     return(_name);
 }
-bool Form::getStatus()
+bool Form::getStatus() const
 {
     return (_status);
 }
@@ -110,9 +110,9 @@ std::ostream& operator <<(std::ostream& out, const Form& other)
 {
     out << "----------FORM DETAILS-----------" << std::endl;
     out << "NAME : " << other.getName() << std::endl;
-    out << "STATUS (1 = SIGNED) : " << other.getName() << std::endl;
-    out << "GRADE TO EXECUTE THE FORM : " << other.getAccreditation_to_execute() << std::endl;
+    out << "STATUS (1 = SIGNED) : " << other.getStatus() << std::endl;
     out << "GRADE TO SIGN THE FORM : " << other.getAccreditation_to_sign() << std::endl;
+    out << "GRADE TO EXECUTE THE FORM : " << other.getAccreditation_to_execute() << std::endl;
     out << "---------------------------------" << std::endl;
     
     return (out);
